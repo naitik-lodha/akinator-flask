@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Akinator</title>
+</head>
+<body>
+    <div>
+        <h1>Akinator</h1>
+        <h3>{{ question }}</h3>
+        <form action="/response" method="post">
+            <button type="submit" name="answer" value="yes">Yes</button>
+            <button type="submit" name="answer" value="no">No</button>
+            <button type="submit" name="answer" value="idk">I don't know</button>
+            <button type="submit" name="answer" value="probably">Probably</button>
+            <button type="submit" name="answer" value="probably not">Probably not</button>
+        </form>
+    </div>
+   
+</body>
+<style>
+    body{
+        background: blueviolet;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        color:white;
+    }
+    button{
+        border-color: white;
+        border:2rem;
+        background: transparent;
+        color: white;
+        margin-left: 25px;
+        padding: 0.5rem;
+        min-width: 5rem;
+        border-radius: 3rem;
+    }
+    button:hover{
+        background: rgb(253, 253, 6);
+        color: black;
+    }
+    div{
+        justify-content: center;
+    }
+</style>
+</html>
