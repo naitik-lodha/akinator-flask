@@ -1,30 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Akinator</title>
-</head>
-<body>
-    <h1>Akinator</h1>
-    <img src={{ url }} alt= {{ name }} width="256px">
-    <h2> {{ name }}</h2>
-    <h4>{{ description }}</h4>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 
-</body>
-<style>
-    body{
-        background: blueviolet;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        color:white;
-    }
-    div{
-        justify-content: center;
-    }
-    img{
-        margin-left: auto;
-  margin-right: auto;
-    }
-</style>
+  </head>
+  <body>
+    <h1>Akinator</h1>
+    <img src={{ url }} alt={{ name }} width="256px" />
+    <h2>{{ name }}</h2>
+    <h4>{{ description }}</h4>
+    <a href="/game"><button>Play again!</button></a>
+    <a href="/guesses">Its not correct!</a>
+  </body>
+
 </html>

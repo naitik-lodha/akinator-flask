@@ -4,6 +4,11 @@ from flask import render_template,Flask, request
 app=Flask(__name__)
 
 aki = Akinator()
+
+@app.route('/')
+def index():
+    return render_template("index.html")
+
 @app.route('/game')
 def game():
     aki.start_game()
@@ -33,8 +38,14 @@ def response():
         # The game is over, make a guess
         aki.win()
         guess = aki.first_guess
-        print(guess['name'])
+        print(guess["name"])
         return render_template('guess.html', name=guess['name'],url=guess['absolute_picture_path'],description=guess['description'])
-
+@app.route('/guesses')
+def guesses():
+    li=[]
+    for k in aki.guesses:
+        if k["name"] not in li and k["name"]!=aki.first_guess["name"]:
+            li.append(k["name"])
+    return render_template("guesses.html",guesses=li)
 if __name__ =="__main__":
     app.run(debug=True)
