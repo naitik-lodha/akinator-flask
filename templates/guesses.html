@@ -5,15 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Other guesses</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
   </head>
   <body>
-    <h1>Other possible guesses may be:</h1>
- 
-      {% for guess in guesses %}
-      <li>{{ guess }}</li>
-      {% endfor %}
+    <img src="{{ url_for('static', filename='logo.png') }}" width="200px" />
+    {% if guesses %}
 
+    <h1>Other possible guesses may be:</h1>
+
+    {% for guess in guesses %}
+    <li>{{ guess }}</li>
+    {% endfor %} {% else %} No guesses available {% endif%}
+    <a href="/game"><button>Play again!</button></a>
   </body>
 </html>

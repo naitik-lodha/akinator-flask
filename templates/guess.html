@@ -2,16 +2,17 @@
 <html>
   <head>
     <title>Akinator</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
   </head>
   <body>
-    <h1>Akinator</h1>
-    <img src={{ url }} alt={{ name }} width="256px" />
+    <img src="{{ url_for('static', filename='logo.png') }}" width="200px" />
+    <img src={{ url }}  alt={{ name }} width="256px" />
     <h2>{{ name }}</h2>
     <h4>{{ description }}</h4>
     <a href="/game"><button>Play again!</button></a>
     <a href="/guesses">Its not correct!</a>
   </body>
-
 </html>

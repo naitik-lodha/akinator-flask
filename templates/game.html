@@ -2,21 +2,35 @@
 <html>
   <head>
     <title>Akinator</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Agency+FB&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <img src="{{ url_for('static', filename='logo.png') }}" width="200px" />
     <div>
-      <h1>Akinator</h1>
       <h3>{{ question }}</h3>
-      <form action="/response" method="post">
-        <button type="submit" name="answer" value="yes">Yes</button>
-        <button type="submit" name="answer" value="no">No</button>
-        <button type="submit" name="answer" value="idk">I don't know</button>
-        <button type="submit" name="answer" value="probably">Probably</button>
-        <button type="submit" name="answer" value="probably not">
-          Probably not
-        </button>
-      </form>
+      <div class="buttons-container">
+        <form action="/response" method="post" id="game-form">
+          <button type="submit" name="answer" value="yes">Yes</button>
+
+          <button type="submit" name="answer" value="no">No</button>
+
+          <button type="submit" name="answer" value="idk">I don't know</button>
+
+          <button type="submit" name="answer" value="probably">Probably</button>
+
+          <button type="submit" name="answer" value="probably not">
+            Probably not
+          </button>
+        </form>
+      </div>
     </div>
   </body>
 </html>
